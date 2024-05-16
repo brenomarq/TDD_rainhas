@@ -10,4 +10,5 @@ TEST_CASE("Tabuleiro - válido e solução", "[rainhas]") {
 
 TEST_CASE("Tabuleiro - válido, mas não é solução", "[rainhas]") {
     REQUIRE(checa_tabuleiro("Tabuleiro3.txt") == 0);
+    REQUIRE(checa_tabuleiro("tabuleiro4.txt") == 0);
 }
