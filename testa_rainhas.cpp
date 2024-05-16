@@ -5,4 +5,5 @@
 
 TEST_CASE("Tabuleiro - válido e solução", "[rainhas]") {
     REQUIRE(checa_tabuleiro("tabuleiro1.txt") == 1);
+    REQUIRE(checa_tabuleiro("tabuleiro2.txt") == 1);
 }
