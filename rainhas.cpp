@@ -32,5 +32,30 @@ int checa_tabuleiro(const std::string file_name) {
     // Gera o tabuleiro a ser analisado
     std::vector<std::vector<int>> tabuleiro = tabuleiro_para_vetor(file_name);
 
-    return 0;
+    int result = 1;
+
+    // Itera pela posição de cada rainha no tabuleiro
+    for (int linha = 0; linha < 8; ++linha) {
+        for (int coluna = 0; coluna < 8; ++coluna) {
+            // Confere se tem uma rainha na posição indicada
+            if (tabuleiro[linha][coluna]) {
+                for (int i = 0; i < 8; ++i) {
+                    for (int j = 0; j < 8; ++j) {
+                        // Ignora a posição da rainha analisada
+                        if (i == linha && j == coluna) continue;
+
+                        // Confere a coluna, a linha e as diagonais
+                        if (tabuleiro[i][j] == 1 &&
+                        (i == linha || j == coluna ||
+                        abs(i - linha) == abs(j - coluna))
+                        ) {
+                            result = 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    return result;
 }

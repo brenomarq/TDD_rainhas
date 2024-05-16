@@ -1,0 +1,62 @@
+        -:    0:Source:rainhas.cpp
+        -:    1:// Copyright 2024 Breno
+        -:    2:#include "./rainhas.hpp"
+        -:    3:#include <iostream>
+        -:    4:#include <string>
+        -:    5:#include <vector>
+        -:    6:#include <fstream>
+        -:    7:
+        2:    8:std::vector<std::vector<int>> tabuleiro_para_vetor(
+        -:    9:    const std::string file_name
+        -:   10:) {
+        2:   11:    std::vector<std::vector<int>> tabuleiro;
+        -:   12:
+        -:   13:    // Abre o arquivo
+        2:   14:    std::ifstream file(file_name);
+        -:   15:
+        -:   16:    // Transforma cada elemento em int e adiciona em um vetor de vetores
+        2:   17:    std::string line;
+       18:   18:    while (std::getline(file, line)) {
+       16:   19:        std::vector<int> row;
+      144:   20:        for (char c : line) {
+      128:   21:            row.push_back(c - '0');
+        -:   22:        }
+       16:   23:        tabuleiro.push_back(row);
+       16:   24:    }
+        -:   25:
+        2:   26:    file.close();
+        -:   27:
+        4:   28:    return tabuleiro;
+        2:   29:}
+        -:   30:
+        2:   31:int checa_tabuleiro(const std::string file_name) {
+        -:   32:    // Gera o tabuleiro a ser analisado
+        2:   33:    std::vector<std::vector<int>> tabuleiro = tabuleiro_para_vetor(file_name);
+        -:   34:
+        2:   35:    int result = 1;
+        -:   36:
+        -:   37:    // Itera pela posição de cada rainha no tabuleiro
+       18:   38:    for (int linha = 0; linha < 8; ++linha) {
+      144:   39:        for (int coluna = 0; coluna < 8; ++coluna) {
+        -:   40:            // Confere se tem uma rainha na posição indicada
+      128:   41:            if (tabuleiro[linha][coluna]) {
+      144:   42:                for (int i = 0; i < 8; ++i) {
+     1152:   43:                    for (int j = 0; j < 8; ++j) {
+        -:   44:                        // Ignora a posição da rainha analisada
+     1024:   45:                        if (i == linha && j == coluna) continue;
+        -:   46:
+        -:   47:                        // Confere a coluna, a linha e as diagonais
+    1120*:   48:                        if (tabuleiro[i][j] == 1 &&
+      112:   49:                        (i == linha || j == coluna ||
+      112:   50:                        abs(i - linha) == abs(j - coluna))
+        -:   51:                        ) {
+    #####:   52:                            result = 0;
+        -:   53:                        }
+        -:   54:                    }
+        -:   55:                }
+        -:   56:            }
+        -:   57:        }
+        -:   58:    }
+        -:   59:
+        2:   60:    return result;
+        2:   61:}
