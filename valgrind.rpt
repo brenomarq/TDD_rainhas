@@ -1,46 +1,85 @@
-==25702== Memcheck, a memory error detector
-==25702== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==25702== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==25702== Command: ./testa_rainhas
-==25702== Parent PID: 25701
-==25702== 
-==25702== Invalid read of size 8
-==25702==    at 0x11C4E4: std::vector<int, std::allocator<int> >::operator[](unsigned long) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
-==25702==    by 0x11BF0E: checa_tabuleiro(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
-==25702==    by 0x14A7A1: ____C_A_T_C_H____T_E_S_T____2() (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
-==25702==    by 0x136F85: Catch::TestInvokerAsFunction::invoke() const (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
-==25702==    by 0x1361A4: Catch::TestCase::invoke() const (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
-==25702==    by 0x1304A1: Catch::RunContext::invokeActiveTestCase() (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
-==25702==    by 0x1301C6: Catch::RunContext::runCurrentTest(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
-==25702==    by 0x12EC47: Catch::RunContext::runTest(Catch::TestCase const&) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
-==25702==    by 0x131DF9: Catch::(anonymous namespace)::TestGroup::execute() (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
-==25702==    by 0x13329B: Catch::Session::runInternal() (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
-==25702==    by 0x132F8D: Catch::Session::run() (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
-==25702==    by 0x174CEC: int Catch::Session::run<char>(int, char const* const*) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
-==25702==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==25702== 
-==25702== 
-==25702== Process terminating with default action of signal 11 (SIGSEGV)
-==25702==    at 0x4C299FC: __pthread_kill_implementation (pthread_kill.c:44)
-==25702==    by 0x4C299FC: __pthread_kill_internal (pthread_kill.c:78)
-==25702==    by 0x4C299FC: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
-==25702==    by 0x4BD5475: raise (raise.c:26)
-==25702==    by 0x127FA7: Catch::handleSignal(int) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
-==25702==    by 0x4BD551F: ??? (in /usr/lib/x86_64-linux-gnu/libc.so.6)
-==25702==    by 0x11C4E3: std::vector<int, std::allocator<int> >::operator[](unsigned long) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
-==25702== 
-==25702== HEAP SUMMARY:
-==25702==     in use at exit: 120,213 bytes in 166 blocks
-==25702==   total heap usage: 2,690 allocs, 2,524 frees, 475,747 bytes allocated
-==25702== 
-==25702== LEAK SUMMARY:
-==25702==    definitely lost: 0 bytes in 0 blocks
-==25702==    indirectly lost: 0 bytes in 0 blocks
-==25702==      possibly lost: 0 bytes in 0 blocks
-==25702==    still reachable: 120,213 bytes in 166 blocks
-==25702==         suppressed: 0 bytes in 0 blocks
-==25702== Reachable blocks (those to which a pointer was found) are not shown.
-==25702== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==25702== 
-==25702== For lists of detected and suppressed errors, rerun with: -s
-==25702== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==50043== Memcheck, a memory error detector
+==50043== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==50043== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==50043== Command: ./testa_rainhas
+==50043== Parent PID: 50042
+==50043== 
+==50043== Invalid read of size 4
+==50043==    at 0x11BEBF: tem_oito_rainhas(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x11C0DE: checa_tabuleiro(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x14B88C: ____C_A_T_C_H____T_E_S_T____4() (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x13788B: Catch::TestInvokerAsFunction::invoke() const (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x136AAA: Catch::TestCase::invoke() const (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x130DA7: Catch::RunContext::invokeActiveTestCase() (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x130ACC: Catch::RunContext::runCurrentTest(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x12F54D: Catch::RunContext::runTest(Catch::TestCase const&) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x1326FF: Catch::(anonymous namespace)::TestGroup::execute() (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x133BA1: Catch::Session::runInternal() (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x133893: Catch::Session::run() (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x1761BC: int Catch::Session::run<char>(int, char const* const*) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==  Address 0x4e71ca8 is 0 bytes after a block of size 24 alloc'd
+==50043==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==50043==    by 0x11E9DD: __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x11E56D: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x11E1BB: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x11DD64: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x11D29E: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x11C982: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x11E8E7: void std::_Construct<std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> > const&>(std::vector<int, std::allocator<int> >*, std::vector<int, std::allocator<int> > const&) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x11E47A: std::vector<int, std::allocator<int> >* std::__uninitialized_copy<false>::__uninit_copy<__gnu_cxx::__normal_iterator<std::vector<int, std::allocator<int> > const*, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > >, std::vector<int, std::allocator<int> >*>(__gnu_cxx::__normal_iterator<std::vector<int, std::allocator<int> > const*, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > >, __gnu_cxx::__normal_iterator<std::vector<int, std::allocator<int> > const*, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > >, std::vector<int, std::allocator<int> >*) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x11DF09: std::vector<int, std::allocator<int> >* std::uninitialized_copy<__gnu_cxx::__normal_iterator<std::vector<int, std::allocator<int> > const*, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > >, std::vector<int, std::allocator<int> >*>(__gnu_cxx::__normal_iterator<std::vector<int, std::allocator<int> > const*, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > >, __gnu_cxx::__normal_iterator<std::vector<int, std::allocator<int> > const*, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > >, std::vector<int, std::allocator<int> >*) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x11D52E: std::vector<int, std::allocator<int> >* std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<std::vector<int, std::allocator<int> > const*, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > >, std::vector<int, std::allocator<int> >*, std::vector<int, std::allocator<int> > >(__gnu_cxx::__normal_iterator<std::vector<int, std::allocator<int> > const*, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > >, __gnu_cxx::__normal_iterator<std::vector<int, std::allocator<int> > const*, std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > >, std::vector<int, std::allocator<int> >*, std::allocator<std::vector<int, std::allocator<int> > >&) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x11CB18: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > const&) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043== 
+==50043== Invalid read of size 8
+==50043==    at 0x11C7BA: std::vector<int, std::allocator<int> >::operator[](unsigned long) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x11BEBE: tem_oito_rainhas(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x11C0DE: checa_tabuleiro(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x14B88C: ____C_A_T_C_H____T_E_S_T____4() (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x13788B: Catch::TestInvokerAsFunction::invoke() const (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x136AAA: Catch::TestCase::invoke() const (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x130DA7: Catch::RunContext::invokeActiveTestCase() (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x130ACC: Catch::RunContext::runCurrentTest(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x12F54D: Catch::RunContext::runTest(Catch::TestCase const&) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x1326FF: Catch::(anonymous namespace)::TestGroup::execute() (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x133BA1: Catch::Session::runInternal() (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x133893: Catch::Session::run() (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==  Address 0x4e71c50 is 0 bytes after a block of size 144 alloc'd
+==50043==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==50043==    by 0x11E70E: __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x11E310: std::allocator_traits<std::allocator<std::vector<int, std::allocator<int> > > >::allocate(std::allocator<std::vector<int, std::allocator<int> > >&, unsigned long) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x11DBDD: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x11DE78: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_create_storage(unsigned long) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x11D438: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_Vector_base(unsigned long, std::allocator<std::vector<int, std::allocator<int> > > const&) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x11CACA: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > > const&) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x11C0D2: checa_tabuleiro(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x14B88C: ____C_A_T_C_H____T_E_S_T____4() (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x13788B: Catch::TestInvokerAsFunction::invoke() const (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x136AAA: Catch::TestCase::invoke() const (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x130DA7: Catch::RunContext::invokeActiveTestCase() (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043== 
+==50043== 
+==50043== Process terminating with default action of signal 11 (SIGSEGV)
+==50043==    at 0x4C299FC: __pthread_kill_implementation (pthread_kill.c:44)
+==50043==    by 0x4C299FC: __pthread_kill_internal (pthread_kill.c:78)
+==50043==    by 0x4C299FC: pthread_kill@@GLIBC_2.34 (pthread_kill.c:89)
+==50043==    by 0x4BD5475: raise (raise.c:26)
+==50043==    by 0x1288AD: Catch::handleSignal(int) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043==    by 0x4BD551F: ??? (in /usr/lib/x86_64-linux-gnu/libc.so.6)
+==50043==    by 0x11BEBE: tem_oito_rainhas(std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >) (in /home/shiroghost999/college-projects/TDD_rainhas/testa_rainhas)
+==50043== 
+==50043== HEAP SUMMARY:
+==50043==     in use at exit: 122,564 bytes in 202 blocks
+==50043==   total heap usage: 3,065 allocs, 2,863 frees, 523,998 bytes allocated
+==50043== 
+==50043== LEAK SUMMARY:
+==50043==    definitely lost: 0 bytes in 0 blocks
+==50043==    indirectly lost: 0 bytes in 0 blocks
+==50043==      possibly lost: 0 bytes in 0 blocks
+==50043==    still reachable: 122,564 bytes in 202 blocks
+==50043==         suppressed: 0 bytes in 0 blocks
+==50043== Reachable blocks (those to which a pointer was found) are not shown.
+==50043== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==50043== 
+==50043== For lists of detected and suppressed errors, rerun with: -s
+==50043== ERROR SUMMARY: 14 errors from 2 contexts (suppressed: 0 from 0)
