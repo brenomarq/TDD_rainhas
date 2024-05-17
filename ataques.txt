@@ -1,0 +1,14 @@
+Linha 0 x Coluna 0 ataca Coluna 3 x Linha 3
+Linha 1 x Coluna 3 ataca Coluna 3 x Linha 3
+Linha 2 x Coluna 1 ataca Coluna 6 x Linha 5
+Linha 3 x Coluna 3 ataca Coluna 0 x Linha 0
+Linha 3 x Coluna 3 ataca Coluna 1 x Linha 3
+Linha 4 x Coluna 7 ataca Coluna 6 x Linha 5
+Linha 4 x Coluna 7 ataca Coluna 7 x Linha 4
+Linha 5 x Coluna 2 ataca Coluna 7 x Linha 4
+Linha 6 x Coluna 5 ataca Coluna 2 x Linha 1
+Linha 6 x Coluna 5 ataca Coluna 4 x Linha 7
+Linha 6 x Coluna 5 ataca Coluna 7 x Linha 4
+Linha 7 x Coluna 4 ataca Coluna 4 x Linha 7
+Linha 7 x Coluna 4 ataca Coluna 5 x Linha 2
+Linha 7 x Coluna 4 ataca Coluna 6 x Linha 5

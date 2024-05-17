@@ -84,8 +84,6 @@ int checa_tabuleiro(const std::string file_name) {
     // Gera o tabuleiro a ser analisado
     std::vector<std::vector<int>> tabuleiro = tabuleiro_para_vetor(file_name);
 
-    int result = 1;
-
     // Checa se o formato é 8 x 8
     if (!formato_certo(tabuleiro)) {
         return -1;
@@ -101,6 +99,11 @@ int checa_tabuleiro(const std::string file_name) {
         return -1;
     }
 
+    int result = 1;
+
+    // Abre um arquivo para escrever nele
+    std::ofstream outFile("ataques.txt");
+
     // Itera pela posição de cada rainha no tabuleiro
     for (int linha = 0; linha < 8; ++linha) {
         for (int coluna = 0; coluna < 8; ++coluna) {
@@ -115,6 +118,7 @@ int checa_tabuleiro(const std::string file_name) {
                         if (tabuleiro[i][j] == 1 && esta_atacando(
                             linha, coluna, i, j)
                         ) {
+                            outFile << "Linha " << linha << " x Coluna " << coluna << " ataca Coluna " << i << " x Linha " << j << std::endl;
                             result = 0;
                         }
                     }
@@ -122,6 +126,8 @@ int checa_tabuleiro(const std::string file_name) {
             }
         }
     }
+
+    outFile.close();
 
     return result;
 }
