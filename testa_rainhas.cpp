@@ -12,3 +12,9 @@ TEST_CASE("Tabuleiro - válido, mas não é solução", "[rainhas]") {
     REQUIRE(checa_tabuleiro("tabuleiro3.txt") == 0);
     REQUIRE(checa_tabuleiro("tabuleiro4.txt") == 0);
 }
+
+TEST_CASE("Tabuleiro - inválido", "[rainhas]") {
+    WHEN("Mais que 8 rainhas no tabuleiro") {
+        REQUIRE(checa_tabuleiro("tabuleiro5.txt") == -1);
+    }
+}
