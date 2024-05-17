@@ -17,4 +17,7 @@ TEST_CASE("Tabuleiro - inválido", "[rainhas]") {
     WHEN("Mais que 8 rainhas no tabuleiro") {
         REQUIRE(checa_tabuleiro("tabuleiro5.txt") == -1);
     }
+    WHEN("Tabuleiro fora do formato 8x8") {
+        REQUIRE(checa_tabuleiro("tabuleiro6.txt") == -1);
+    }
 }
