@@ -67,6 +67,20 @@ bool esta_atacando(int linha, int coluna, int i, int j) {
     return (i == linha || j == coluna || abs(i - linha) == abs(j - coluna));
 }
 
+bool caracter_invalido(std::vector<std::vector<int>> tabuleiro) {
+    for (int i = 0; i < 8; ++i) {
+        for (int j = 0; j < 8; ++j) {
+            // Checa se há caracter inválido
+            if (tabuleiro[i][j] != 0 ||
+            tabuleiro[i][j] != 1) {
+                return true;
+            }
+        }
+    }
+
+    return true;
+}
+
 int checa_tabuleiro(const std::string file_name) {
     // Gera o tabuleiro a ser analisado
     std::vector<std::vector<int>> tabuleiro = tabuleiro_para_vetor(file_name);
@@ -75,6 +89,11 @@ int checa_tabuleiro(const std::string file_name) {
 
     // Checa se o formato é 8 x 8
     if (!formato_certo(tabuleiro)) {
+        return -1;
+    }
+
+    // Checa se há caracteres inválidos
+    if (caracter_invalido(tabuleiro)) {
         return -1;
     }
 
