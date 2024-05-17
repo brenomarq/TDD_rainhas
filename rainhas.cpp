@@ -5,6 +5,8 @@
 #include <vector>
 #include <fstream>
 
+using namespace std;
+
 std::vector<std::vector<int>> tabuleiro_para_vetor(
     const std::string file_name
 ) {
@@ -102,8 +104,9 @@ int checa_tabuleiro(const std::string file_name) {
     int result = 1;
 
     // Abre um arquivo para escrever nele
-    std::ofstream outFile("ataques.txt");
+    std::ofstream outFile("ataques.txt", ios::app);
 
+    outFile << "Ataques " << file_name << std::endl;
     // Itera pela posição de cada rainha no tabuleiro
     for (int linha = 0; linha < 8; ++linha) {
         for (int coluna = 0; coluna < 8; ++coluna) {
@@ -118,7 +121,8 @@ int checa_tabuleiro(const std::string file_name) {
                         if (tabuleiro[i][j] == 1 && esta_atacando(
                             linha, coluna, i, j)
                         ) {
-                            outFile << "Linha " << linha << " x Coluna " << coluna << " ataca Coluna " << i << " x Linha " << j << std::endl;
+                            outFile << "Linha " << linha << " x Coluna " << coluna << " ataca Linha " <<
+                            i << " x Coluna " << j << std::endl;
                             result = 0;
                         }
                     }
