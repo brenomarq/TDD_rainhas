@@ -20,4 +20,7 @@ TEST_CASE("Tabuleiro - inválido", "[rainhas]") {
     WHEN("Tabuleiro fora do formato 8x8") {
         REQUIRE(checa_tabuleiro("tabuleiro6.txt") == -1);
     }
+    WHEN("Tabuleiro com dígitos inválidos") {
+        REQUIRE(checa_tabuleiro("tabuleiro7.txt") == -1);
+    }
 }
