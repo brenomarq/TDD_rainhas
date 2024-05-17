@@ -71,14 +71,13 @@ bool caracter_invalido(std::vector<std::vector<int>> tabuleiro) {
     for (int i = 0; i < 8; ++i) {
         for (int j = 0; j < 8; ++j) {
             // Checa se há caracter inválido
-            if (tabuleiro[i][j] != 0 ||
-            tabuleiro[i][j] != 1) {
+            if (tabuleiro[i][j] > 1) {
                 return true;
             }
         }
     }
 
-    return true;
+    return false;
 }
 
 int checa_tabuleiro(const std::string file_name) {
