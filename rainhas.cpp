@@ -28,6 +28,10 @@ std::vector<std::vector<int>> tabuleiro_para_vetor(
     return tabuleiro;
 }
 
+bool esta_atacando(int linha, int coluna, int i, int j) {
+    return (i == linha || j == coluna || abs(i - linha) == abs(j - coluna));
+}
+
 int checa_tabuleiro(const std::string file_name) {
     // Gera o tabuleiro a ser analisado
     std::vector<std::vector<int>> tabuleiro = tabuleiro_para_vetor(file_name);
@@ -45,10 +49,9 @@ int checa_tabuleiro(const std::string file_name) {
                         if (i == linha && j == coluna) continue;
 
                         // Confere a coluna, a linha e as diagonais
-                        if (tabuleiro[i][j] == 1 &&
-                        (i == linha || j == coluna ||
-                        abs(i - linha) == abs(j - coluna))
-                        ) {
+                        if (tabuleiro[i][j] == 1 && esta_atacando(
+                            linha, coluna, i, j
+                        )) {
                             result = 0;
                         }
                     }
